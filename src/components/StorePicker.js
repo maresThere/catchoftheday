@@ -9,14 +9,14 @@ class StorePicker extends React.Component {
     // stop form from loading
     event.preventDefault();
     // get text from input
-    console.log(this.myInput.value);
-  }
+    const storeName = this.myInput.value.value;
+    this.props.history.push(`/store/${storeName}`);
+  };
 
   render() {
-
     return (
       <form className = "store-selector" onSubmit={this.goToStore}>
-      <h2> pick a store </h2>
+      <h2>pick a store</h2>
 
       <input
       type ="text"
