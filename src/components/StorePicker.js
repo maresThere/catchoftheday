@@ -1,5 +1,5 @@
 import React from 'react';
-import { getFunName } from './helpers';
+import { getFunName } from '../helpers';
 
 class StorePicker extends React.Component {
 
@@ -11,6 +11,7 @@ class StorePicker extends React.Component {
     // get text from input
     const storeName = this.myInput.value.value;
     this.props.history.push(`/store/${storeName}`);
+    console.log({storeName})
   };
 
   render() {

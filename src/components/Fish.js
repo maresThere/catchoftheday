@@ -8,11 +8,15 @@ class Fish extends React.Component {
     return (
       <li className='menu-fish'>
         <img src={image} alt={name} />
-        <h3>{name}
-        <span className='price'>{formatPrice(price)}</span></h3>
+        <h3 className='fish-name'>
+          {name}
+        <span className='price'>{formatPrice(price)}</span>
+        </h3>
         <p>{desc}</p>
-        <button disabled={!isAvailable}>Add To Cart</button>
-        <p>{status}</p>
+        <button disabled={!isAvailable} onClick={() => this.props.addToOrder(this.props.index)}>
+          {isAvailable ? 'Add to Order' : 'Sold Out!'}
+        </button>
+
       </li>
     );
   }
